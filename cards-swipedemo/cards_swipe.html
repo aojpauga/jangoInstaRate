@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <title>Swipe away</title>
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
+    <script src="js/mobiscroll.javascript.min.js"></script>
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    </style>
+
+</head>
+<body>
+
+<div mbsc-page class="demo-swipe">
+    <div class="mbsc-note mbsc-note-primary mbsc-align-center">
+        Swipe left/right to clear cards.
+    </div>
+    
+    <ul class="mbsc-card-list mbsc-cloak">
+        <li mbsc-card>
+            <div class="mbsc-card-content">
+                <img src="https://img.mobiscroll.com/demos/netflix.png" draggable="false" class="mbsc-avatar">
+                <h5 class="mbsc-card-title mbsc-bold">Netflix</h5>
+                <div class="mbsc-card-subtitle">Sherlock Series 3 is now avalable on Netflix</div>
+            </div>
+        </li>
+    
+        <li mbsc-card>
+            <div class="mbsc-card-content">
+                <img src="https://img.mobiscroll.com/demos/angrybirds.png" draggable="false" class="mbsc-avatar">
+                <h5 class="mbsc-card-title mbsc-bold">Angry birds</h5>
+                <div class="mbsc-card-subtitle">Don't forget your daily Arena entry.</div>
+            </div>
+        </li>
+    
+        <li mbsc-card>
+            <div class="mbsc-card-content">
+                <img src="https://img.mobiscroll.com/demos/candycam.png" draggable="false" class="mbsc-avatar">
+                <h5 class="mbsc-card-title mbsc-bold">Candycam</h5>
+                <div class="mbsc-card-subtitle">A new update is available!</div>
+            </div>
+        </li>
+    
+        <li mbsc-card>
+            <div class="mbsc-card-header">
+                <div class="mbsc-card-title">Today is Jenifer's birthday</div>
+            </div>
+            <div class="mbsc-card-content">
+                Don't forget she is turning 25!!!
+            </div>
+            <div class="mbsc-card-footer">
+                <button class="mbsc-btn-flat" data-icon="phone">Call</button>
+                <button class="mbsc-btn-flat" data-icon="bubble">Message</button>
+            </div>
+        </li>
+    
+        <li mbsc-card>
+            <div class="mbsc-card-content">
+                <img src="https://img.mobiscroll.com/demos/subwaysurf.png" draggable="false" class="mbsc-avatar">
+                <h5 class="mbsc-card-title mbsc-bold">Subway Surf</h5>
+                <div class="mbsc-card-subtitle">Is it your lucky day? 24-Hour Mega Jackpint Event happening right now!</div>
+            </div>
+        </li>
+    
+        <li mbsc-card>
+            <div class="mbsc-card-content">
+                <img src="https://img.mobiscroll.com/demos/mbsc-logo.png" draggable="false" class="mbsc-avatar">
+                <h5 class="mbsc-card-title mbsc-bold">Mobiscroll</h5>
+                <div class="mbsc-card-subtitle">The new Mobiscroll 4.0.0 is out!</div>
+            </div>
+        </li>
+    
+        <li mbsc-card>
+            <div class="mbsc-card-header">
+                <h2 class="mbsc-card-title">15 minutes to work</h2>
+            </div>
+            <img src="https://img.mobiscroll.com/demos/route.png" draggable="false">
+            <div class="mbsc-card-content mbsc-btn-group-block">
+                <button class="mbsc-btn-flat mbsc-align-left" data-icon="ion-navigate">Navigate / 15 min. via Shotwell St</button>
+                <button class="mbsc-btn-flat mbsc-align-left" data-icon="fa-rotate-left">Alternative route / 18 mins</button>
+            </div>
+        </li>
+    
+        <li mbsc-card>
+            <div class="mbsc-card-content">
+                <img src="https://img.mobiscroll.com/demos/opencam.png" draggable="false" class="mbsc-avatar">
+                <h5 class="mbsc-card-title mbsc-bold">Open Camera</h5>
+                <div class="mbsc-card-subtitle">A new update is available!</div>
+            </div>
+        </li>
+    
+    </ul>
+</div>
+
+<script>
+
+    mobiscroll.settings = {
+        lang: 'en',   // Specify language like: lang: 'pl' or omit setting to use default
+        theme: 'ios'  // Specify theme like: theme: 'ios' or omit setting to use default
+    }
+    
+    mobiscroll.listview('.mbsc-card-list', {
+        stages: [{
+            percent: -20,
+            action: function (event, inst) {
+                inst.remove(event.target);
+                return false;
+            }
+        }, {
+            percent: 20,
+            action: function (event, inst) {
+                inst.remove(event.target);
+                return false;
+            }
+        }]
+    });
+</script>
+
+</body>
+</html>
